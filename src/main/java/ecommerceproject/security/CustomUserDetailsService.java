@@ -1,8 +1,8 @@
-package ecommerce.security;
+package ecommerceproject.security;
 
 
-import ecommerce.entity.User;
-import ecommerce.repository.*;
+import ecommerceproject.entitymodel.User;
+import ecommerceproject.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

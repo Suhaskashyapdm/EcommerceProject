@@ -1,4 +1,4 @@
-package ecommerce.entity;
+package ecommerceproject.entitymodel;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,10 +8,12 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OrderItem {
-    @Id 
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+public class CartItem {
+    @Id @GeneratedValue
     private Long id;
+
+    @ManyToOne
+    private User user;
 
     @ManyToOne
     private Product product;

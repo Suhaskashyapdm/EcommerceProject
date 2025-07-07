@@ -1,4 +1,4 @@
-package ecommerce.entity;
+package ecommerceproject.entitymodel;
 
 import java.time.LocalDateTime;
 //import java.time.LocalDateTime;

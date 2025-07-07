@@ -1,4 +1,4 @@
-package ecommerce.entity;
+package ecommerceproject.entitymodel;
 
 import jakarta.persistence.*;
 import lombok.*;

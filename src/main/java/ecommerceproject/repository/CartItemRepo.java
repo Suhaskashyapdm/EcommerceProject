@@ -1,11 +1,11 @@
-package ecommerce.repository;
+package ecommerceproject.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import ecommerce.entity.CartItem;
-import ecommerce.entity.User;
+import ecommerceproject.entitymodel.CartItem;
+import ecommerceproject.entitymodel.User;
 
 public interface CartItemRepo extends JpaRepository<CartItem, Long> {
     List<CartItem> findByUser(User user);

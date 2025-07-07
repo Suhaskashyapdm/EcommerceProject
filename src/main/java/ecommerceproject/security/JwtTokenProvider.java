@@ -1,4 +1,4 @@
-package ecommerce.security;
+package ecommerceproject.security;
 
 
 import io.jsonwebtoken.*;

@@ -1,11 +1,11 @@
-package ecommerce.controller;
+package ecommerceproject.controller;
 
-import ecommerce.entity.CartItem;
-import ecommerce.entity.Product;
-import ecommerce.entity.User;
-import ecommerce.repository.CartItemRepo;
-import ecommerce.repository.ProductRepo;
-import ecommerce.repository.UserRepo;
+import ecommerceproject.entitymodel.CartItem;
+import ecommerceproject.entitymodel.Product;
+import ecommerceproject.entitymodel.User;
+import ecommerceproject.repository.CartItemRepo;
+import ecommerceproject.repository.ProductRepo;
+import ecommerceproject.repository.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -29,7 +29,7 @@ public class CartController {
         return cartItemRepository.findByUser(user);
     }
 
-    //POST: add items to the cart
+    //adding items to the cart
     @PostMapping("/addcart")
     public ResponseEntity<String> addToCart(
             Authentication auth,
@@ -49,7 +49,7 @@ public class CartController {
         return ResponseEntity.ok("Product added to the cart");
     }
 
-   // PUT:  User can update quantity
+   // update quantity
     @PutMapping("/updatecart")
     public ResponseEntity<String> updateCartItem(
             Authentication auth,
@@ -62,7 +62,7 @@ public class CartController {
         return ResponseEntity.ok("Cart Product is updated");
     }
 
-    //DELETE: user can delete the item from cart
+    //delete the item from cart
     @DeleteMapping("/removecart/{id}")
     public ResponseEntity<String> removeCartItem(@PathVariable Long id) {
         cartItemRepository.deleteById(id);

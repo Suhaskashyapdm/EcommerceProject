@@ -1,9 +1,9 @@
-package ecommerce.controller;
+package ecommerceproject.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import ecommerce.entity.Product;
-import ecommerce.repository.ProductRepo;
+import ecommerceproject.entitymodel.Product;
+import ecommerceproject.repository.ProductRepo;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,14 +34,14 @@ public class ProductController {
     }
 
     
-    //POST: Creating a new product from admin
+    //Creating a new product
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public Product createProduct(@RequestBody Product product) {
         return productRepository.save(product);
     }
 
-    //PUT: update products from admin
+    //update products
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product updated) {
@@ -55,7 +55,7 @@ public class ProductController {
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
-    //DELETE: delete products from admin
+    //delete products
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {

@@ -1,4 +1,4 @@
-package ecommerce.security;
+package ecommerceproject.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,9 +1,9 @@
-package ecommerce.controller;
+package ecommerceproject.controller;
 
-import ecommerce.dto.*;
-import ecommerce.entity.User;
-import ecommerce.repository.UserRepo;
-import ecommerce.security.JwtTokenProvider;
+import ecommerceproject.DTO.*;
+import ecommerceproject.entitymodel.User;
+import ecommerceproject.repository.UserRepo;
+import ecommerceproject.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

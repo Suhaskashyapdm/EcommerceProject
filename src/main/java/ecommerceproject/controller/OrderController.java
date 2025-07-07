@@ -1,12 +1,12 @@
-package ecommerce.controller;
+package ecommerceproject.controller;
 
-import ecommerce.entity.CartItem;
-import ecommerce.entity.Order;
-import ecommerce.entity.OrderItem;
-import ecommerce.entity.User;
-import ecommerce.repository.CartItemRepo;
-import ecommerce.repository.OrderRepo;
-import ecommerce.repository.UserRepo;
+import ecommerceproject.entitymodel.CartItem;
+import ecommerceproject.entitymodel.Order;
+import ecommerceproject.entitymodel.OrderItem;
+import ecommerceproject.entitymodel.User;
+import ecommerceproject.repository.CartItemRepo;
+import ecommerceproject.repository.OrderRepo;
+import ecommerceproject.repository.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -24,7 +24,7 @@ public class OrderController {
     private final OrderRepo orderRepository;
     private final CartItemRepo cartItemRepository;
     private final UserRepo userRepository;
-//POST: Creating a order
+//Create order
     @PostMapping("/ordercreate")
     @Transactional
     public ResponseEntity<String> createOrder(Authentication auth) {
@@ -59,7 +59,7 @@ public class OrderController {
         return ResponseEntity.ok("Order placed..");
     }
 
-    //GET: Get order list
+    //order list
     @GetMapping
     public List<Order> getOrders(Authentication auth) {
         User user = userRepository.findByUsername(auth.getName()).orElseThrow();
